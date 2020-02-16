@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sex Health Monitor</title>
+    <link rel='stylesheet' type="text/css" href="style.css">
+    <script src="popup.js"></script>
+    <script src="moment.min.js"></script>
+</head>
+
+<body>
+    <style>
+        body {
+            height: 200px;
+            width: 300px;
+        }
+    </style>
+    <h2>Sex Health Monitor</h2>
+    <p id=sitetime>demo</p>
+    <script>
+        window.onload = function() {
+            const m = moment();
+            var startTime = m;
+        }
+        var t1 = new Date();
+        console.log(t1);
+
+        function siteTime() {
+            window.setTimeout("siteTime()", 1000);
+            t2 = new Date();
+            diff = t2 - t1;
+            var diffhour = Math.floor(diff / 3600000);
+            var diffmin = Math.floor((diff / 60000) - diffhour * 60);
+            var diffsec = Math.floor((diff - (diffhour * 3600 + diffmin * 60) * 1000) / 1000);
+            document.getElementById("sitetime").innerHTML = "The site ran for " + diffhour + " hours " + diffmin + " minutes " + diffsec + " seconds";
+        }
+        siteTime();
+    </script>
+    <script>
+        let dur;
+        var timespent = getCookie("lastVisitTime");
+        console.log(timespent);
+
+        dur = moment.duration(5000);
+        console.log(dur.humanize());
+        const m = moment();
+        console.log(m.toString());
+    </script>
+    <button type="button" onclick="myFunction()">Click it</button>
+    <p id="demo">Hellow world!</p>
+</body>
+
+</html>
